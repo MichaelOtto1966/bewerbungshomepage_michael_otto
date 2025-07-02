@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN">
+<html>
+  <head>
+    <title>Kontaktformular</title>
+    <div id="meta"></div>
+    <div id="fonts"></div>
+      
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+      
+    <!-- Einbindung der Javascript-Bibliothek JQUERY von GOOGLE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Einbindung der Stylesheet-Bibliothek BOOTSTRAP für die automatisierte Menüsteuerung -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+     <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+    <script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js"></script>
+     <!-- Load the element definition for markdown-->
+    <script type="module" src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@2/dist/zero-md.min.js"></script>
+  </head>
+
+  <body onload="setTimeout(function() {setActiveMenu('#main_menu_item_kontakt');}, 1000);">
+    <div id="kopfbereich"></div>
+    <!-- Ende kopfbereich -->
+
+    <div id="navibereich"></div>
+    <!-- Ende navibereich -->
+
+    <div id="textbereich">
+      <zero-md src="content-kontakt.md">
+        <template>
+        <!-- Load external stylesheets with a `<link rel="stylesheet">` tag -->
+         <link rel="stylesheet" href="/markdown-style.css" />
+        </template>
+      </zero-md>
+      <p class="title">Kontaktformular</p>
+      <p><iframe id="dummyframe" style="border-style: none;" name="dummyframe" width="0" height="0"></iframe></p>
+        <div id="ergebnis_send" style="display: none; vertical-align: top;">
+        <p class="title" style="text-align: center;">Die E-Mail ist erfolgreich versendet worden. Sie erhalten ebenfalls eine Bestätigungs-Mail an Ihre angegebene Adresse.<br />Ihr Internet-Team.<br /><br /></p>
+      </div>
+      <form id="myForm" action="send" method="post" name="myForm" onsubmit="return validateForm();" enctype="multipart/form-data" target="dummyframe">
+        <div id="contact-formular">
+          <table class="form-table">
+            <tr>
+              <td class="form-label-kontakt lastname" align="right">Name*:</td>
+              <td class="form-field-kontakt"><input id="fullname" class="type" type="text" name="fullname" value="" /></td>
+            </tr>
+            <tr>
+              <td class="form-label-kontakt" align="right">Email-Adresse*:</td>
+              <td class="form-field-kontakt"><input id="email" class="type" type="email" name="email" value="" /></td>
+            </tr>
+            <tr>
+              <td class="form-label-kontakt" align="right">Anliegen*:</td>
+              <td class="form-field-kontakt"><input id="reason" class="type" type="text" name="reason" value="" /></td>
+            </tr>
+            <tr>
+              <td class="textarea" colspan="2"><textarea id="formmessage" class="textarea" name="formmessage"></textarea></td>
+            </tr>
+            <tr>
+              <td class="form-label-kontakt" align="right">Ich bin mit der Speicherung meiner Daten einverstanden*:</td>
+              <td class="form-field-kontakt"><input id="ds_check" class="type" type="checkbox" name="ds_check" value="ds_check_true" /></td>
+            </tr>
+            <tr>
+              <td class="form-submit" colspan="2">
+              <br /><br />
+              <div class="submit"><input id="Submit" type="submit" value="Senden" /></div>
+              </td>
+            </tr>
+            <tr>
+              <td class="form-label" colspan="2" align="left">* Pflichtfeld</td>
+            </tr>
+          </table>
+        </div>
+      </form>
+    <br><br> <br><br> <br><br> <br><br> 
+    </div>
+    
+    <!-- Ende textbereich -->
+    
+    <div id="fussbereich"></div>
+    <!-- Ende fussbereich -->
+
+    <div id="newsbereich"></div>
+    <!-- Ende newsbereich -->
+    <script>
+      $(window).on("load", function () {
+        load_content('navibereich', 'content-navi.html');
+       load_content('newsbereich', 'content-news.html');
+       load_content('fussbereich', 'content-footer.html');
+       load_content('kopfbereich', 'content-header.html');
+       load_content('meta', 'content-meta.html');
+       load_content('fonts', 'content-fonts.html');
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,750 @@
+/*  -----------------------------------------        */
+/*  Übergreifend / Body                              */
+/*  -----------------------------------------        */
+html, body {
+ background-image:url("https://cdn.glitch.global/523063a9-9bd1-4d03-9a3b-526abc4c3541/Glitch_background.png?v=1648922507303");
+ background-repeat:no-repeat; 
+ background-size: cover;      
+ overflow:hidden;             
+ font-size:13pt;
+ font-family: 'Fira Sans', sans-serif;
+ background-color: rgb(255,211,155);
+}
+
+#kopfbereich {
+
+  position:fixed;            ! Position des Kopfbereichs ist immer oben - FIX!;
+  top:0;                     ! Position oben;
+  left:0;                    ! Position ganz links;
+  border: 1px solid #ccc;    ! Rahmenart und -farbe;
+  background-color:rgba(255,222,173,0.5);    ! Hintergrundfarbe;
+  width:100%;                ! Breite des Kopfbereichs;
+  height:100px;              ! Höhe des Kopfbereichs;
+  z-index:2;                 ! Kopfbereich überlagert andere Bereiche;                
+}
+
+#navibereich {
+  position:fixed;            ! Position des Navibereichs immer links! - Fix;
+  top: 100px;                ! Position unterhalb des Kopfbereiches;
+  left:0;                    ! Position ganz links;
+  border: 1px solid #ccc;    ! Rahmenart und -farbe;
+  background-color:rgba(210,105,30,0.3);      ! Hintergrundfarbe;
+  width:200px;               ! Breite des Navibereichs;
+  min-height:300px;          ! Minimal-Höhe des Navibereichs;
+  z-index:2;                 ! Navibereich überlagert andere Bereiche;
+}
+
+#textbereich {
+
+  position:fixed;            ! Position des Textbereichs immer in der Mitte!;
+  left:0;                    ! Textbereich fängt ganz links an;
+  right:0;                   ! Textbereich geht bis ganz rechts;
+  top:100px;                 ! Außenabstand zum Kopfbereich;
+  padding-left:210px;        ! Innenabstand zum Menü;
+  padding-right:210px;       ! Innenabstand zum Newsbereich;
+  padding-top:20px;          ! Innenabstand nach oben;
+  padding-bottom:60px;       ! Innenabstand nach unten;
+  border: 1px solid #ccc;    ! Rahmenart und -farbe;
+  height:100%;               ! Höhe des Textbereiches auf 100% eingestellt;
+  overflow-y: auto;          ! Zeige Scrollbalken rechts, falls notwendig;
+  background-color:rgba(255,255,255,0.85); ! Hintergrund ist weiß mit 50 %iger Transparenz;
+}
+
+#newsbereich {
+  position:fixed;            ! Position des Newsbereichs immer rechts! - FIX;
+  right:0px;                 ! Rechtsausrichtung;
+  top: 100px;                ! Position unterhalb des Kopfbereiches;
+  border: 1px solid #ccc;    ! Rahmenart und -farbe;
+  background-color:rgba(255,236,139,0.8);   ! Hintergrundfarbe;
+  width:200px;               ! Breite des Newsbereichs;
+  min-height:300px;          ! Minimal-Höhe des Newsbereichs;
+  z-index:2;                 ! Newsbereich überlagert andere Bereiche;
+  display:block;
+}
+#newsswitch {
+  position:fixed;            ! Position des Newsbereichs immer rechts! - FIX;
+  right:10px;                 ! Rechtsausrichtung;
+  top: 10px;                ! Position unterhalb des Kopfbereiches;
+  border: 1px solid #ccc;    ! Rahmenart und -farbe;
+  background-image:url(https://cdn.glitch.global/0875808f-d998-41f1-99b4-1ad690cbded0/responsive-menu1.png?v=1648299810546);   ! Hintergrundfarbe;
+  width:50px;               ! Breite des Newsbereichs;
+  height:50px;               ! Minimal-Höhe des Newsbereichs;
+  z-index:4;                 ! Newsbereich überlagert andere Bereiche;
+  display:none;
+}
+
+.autoscroll {
+overflow-y: auto;
+}
+
+#fussbereich {
+
+ position:fixed;              ! Position des Fußbereichs immer unten!;
+ bottom:0;                    ! Unten ausgerichtet!;
+ left:0;                      ! Position ganz links;
+ border: 1px solid #ccc;      ! Rahmenart und -farbe;
+ width: 100%;                 ! Breite des Fussbereichs;
+ background-color:rgba(210,105,30,0.9); 
+ height:50px;                 ! Höhe des Fußbereichs;
+ z-index:2;                   ! Fußbereich überlagert andere Bereiche;  
+ text-align:center;            ! Text wird im Fussbereich zentriert;
+ padding:10px;                ! Innenabstand einheitlich bei 10px;
+} 
+/*  ----------------------------------------- */
+/*  Schriftformatierung                       */
+/*  ----------------------------------------- */
+
+p {
+font-style:normal;                                                 ! Festlegung des Schrifttyps;
+font-weight:normal;                                                ! Festlegung der Fettschrift;
+color:#000000;                                                     ! Festlegung des Schriftfarbe;
+}
+.title {
+font-stretch:wider;                                                ! Festlegung der Schriftweite;
+font-size:130%;                                                    ! Festlegung des Schriftgröße;
+font-weight:bold;                                                  ! Festlegung der Fettschrift;
+}
+
+.header-title {
+font-family: 'Poppins', sans-serif;
+font-stretch:ultra-expanded;
+font-size:200%;
+font-weight:bold;
+text-align:center;
+margin-top:10px;
+color:rgba(186,85,211,1);
+color: rgb(139,37,0);
+}
+/*  Lauftext                       */
+.marquee {
+		max-width: 100vw; /* iOS braucht das */
+		white-space: nowrap;
+		overflow: hidden;
+}
+
+	.marquee span {
+		display: inline-block;
+		padding-left: 105%; /* die zusätzlichen 5% erzeugen einen verzögerten Start und vermeiden so ein Ruckeln auf langsamen Seiten */
+		animation: marquee 10s linear infinite;
+	}
+
+	/* Optional: mouseover (oder Tipp auf dem Touchscreen) pausiert die Laufschrift */
+	.marquee span:hover {
+		animation-play-state: paused 
+	}
+
+	/* Make it move */
+	@keyframes marquee {
+		0%   { transform: translateX(0); }
+		100% { transform: translateX(-100%); }
+	}
+
+.marquee {
+    color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 60s infinite linear;
+}
+
+@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+      -webkit-filter: hue-rotate(360deg);
+    }
+}
+
+
+.footer-text {
+font-family: 'Poppins', sans-serif;
+font-stretch:wider;              ! Festlegung der Schriftweite;
+font-size:100%;                  ! Festlegung des Schriftgröße;
+font-weight:bold;                ! Festlegung der Fettschrift;
+color: rgb(139,37,0);	       ! Festlegung der Schriftfarbe (hier weiß);
+color: rgb(255,255,255);	       ! Festlegung der Schriftfarbe (hier weiß);
+}
+
+.footer-text > a:hover {
+
+	font-weight:700;	! Festlegung der Fettschrift für Montserrat, ansonsten bold einstellen;
+	font-style:oblique;	! Festlegung der Kursiv-Schrift;
+	color: rgba(255,215,0,1);	! Festlegung des Schriftfarbe (gold);
+}
+/*  ----------------------------------------- */
+/*  Bilder einbinden                          */
+/*  ----------------------------------------- */
+.header-image{
+  content:url(https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2Faachen_schild.jpg?v=1622048075004);
+  width:130px;
+  float:left;
+  margin:5px;
+    
+}
+
+video {
+  width:100%;
+  max-width:600px;
+}
+
+iframe {
+  width:100%;
+  max-width:700px;
+  max-height:500px;
+}
+
+/*  -----------------------------------------        */
+/*  Menüformatierung                                 */
+/*  -----------------------------------------        */
+
+#navibereich .nav {
+	text-align:right;          ! Textausrichtung rechtbündig;
+	list-style-type: none;     ! es werden keine Aufzählungszeichen dargestellt;
+	margin: 20px 5px;          ! Abstände nach oben/unten und rechts/links;
+}
+#navibereich .nav > li {
+	float:none;	! Menüpunkte werden untereinander angezeigt, Bei float:left, werden diese nebeneinander dargestellt;
+}				
+
+#navibereich .nav > li > a {
+  font-family: 'Poppins', sans-serif;
+  text-transform:uppercase;	! Verwende Großbuchstaben;
+	font-size:110%;            	! Festlegung des Schriftgröße;
+	font-weight:700;		      ! Festlegung der Normalschrift für Montserrat, ansonsten normal einstellen;
+	color: rgb(139,37,0);	! Festlegung des Schriftfarbe (weiß);
+	display: block;			! Art der Anzeige als Blockelement;
+	transition: all 0.3s ease-out 0s; ! Definition des Übergangs von Normal zu Hover;
+	line-height: 20px;		! Höhe der Zeile wird festgelegt;
+	text-decoration:none;		! Keinen Unterstrich unterhalb des Menütitels;
+	padding-right:5px;		! Innenabstand nach rechts: Ist nur bei einem horizontalen Menü notwendig;
+}
+
+#navibereich .nav > li > a.active {
+	font-weight:700;		! Festlegung der Fettschrift für Montserrat, ansonsten bold einstellen;
+	text-shadow: 1px 1px black, 2px 2px grey, 3px 3px 	#696969; ! Festlegung des Text-Shadows (Schatten);
+  color: rgba(255,215,0,1);	! Festlegung des Schriftfarbe (gold);
+}
+
+#navibereich .nav > li > a:hover {
+
+	font-weight:700;	! Festlegung der Fettschrift für Montserrat, ansonsten bold einstellen;
+	font-style:italic;	! Festlegung der Kursiv-Schrift;
+	text-shadow: 1px 1px white, 2px 2px white, 3px 3px white; ! Festlegung des Text-Shadows (Schatten);
+}
+
+/*  ----------------------------------------- */
+/*  Paralax-Formatierung             */
+/*  ----------------------------------------- */
+.parallax {
+  /* The image used */
+  background-image: url("https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2Faachen_dom.jpg?v=1622109470341");
+
+  /* Set a specific height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/*  -----------------------------------------        */
+/*  Für Teaser (Blickfang)             	             */
+/*  -----------------------------------------        */
+.teaser {
+  font-family: 'Poppins', sans-serif;
+  font-weight:bold;				! setze Schriftart und -gewicht;
+	padding: 2px 2px;				! Innenabstand für den Teaser;
+	margin: 0 1px 2px 1px;			! Außenabstand nach unten zum nächsten Teaser;
+	border-bottom: 1px solid #ccc;		! unten gibt es eine Begrenzungslinie;
+}
+.teaser_date {
+	font-size:90%;                           		 ! etwas kleiner als die Standardschrift;
+}
+.teaser_title {
+	font-size:105%;                           		! etwas größer als die Standardschrift;
+	line-height:110%;
+  font-weight:bold;
+}
+.teaser_text {
+        line-height: 105%;                      ! Anpassung der Zeilenhöhe;
+        font-size:95%;  
+}
+a.teaser_link {
+   font-size:100%;  
+   padding-top: 2px;
+   color: rgb(139,37,0);
+}
+
+.teaser_border {
+  color: #333;
+  border: 1px solid #FF6347;
+  box-shadow: 1px 1px white, 2px 2px white, 3px 3px white; ! Festlegung des Text-Shadows (Schatten);
+  margin-top:2px;
+  margin-bottom:2px;
+}
+
+/* --------------------  */
+/* Bildergalerie         */
+/* --------------------  */
+.galerie > ul,li {
+        margin: 0.1em;
+        padding: 0.1em;
+}
+.galerie > li {
+        display: inline-block;
+        list-style-type: none;
+        width: 45%;
+        float:none;
+}
+.galerie > img {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+}
+.galerie > button {
+        padding: 0.1em;
+}
+
+/* --------------------  */
+/* Für große Monitore    */
+/* --------------------  */
+
+@media all and (min-width: 35em) {
+        .galerie > li {
+                width: 10em;
+        }
+        .galerie > button {
+                padding: 0.1em;
+                width: 10em;
+                height: 7.5em;
+                position: relative;
+        }
+        .galerie > button img {
+                border: 0;
+                position: absolute;
+                left: 0%;
+                top: 0%;
+                z-index: 1;
+                box-shadow: 0;
+                width: 10em;
+                transition: all 1s;
+        }
+       .galerie > button:focus img,
+        .galerie > button:hover img {
+                border: 2em solid rgba(0,191,255,0.5);
+                border-radius: 1em;
+                position: absolute;
+                left: -4%;
+                top: -4%;
+                width: 500%;
+                z-index: 5;
+                box-shadow: 1px 1px 5px #333;
+                transition: all 1s;
+        }
+}
+
+/* --------------------  */
+/* Bildergalerie         */
+/* --------------------  */
+
+.gallery {
+  --size: 10em; /* control the size */
+  --gap: 1em;  /* control the gap */
+  --zoom: 1.5;   /* control the scale factor */
+  
+  display: grid;
+  gap: var(--gap);
+  width: calc(3.5*var(--size) + 2*var(--gap));
+  aspect-ratio: 3; /* ratio between width and height */
+  grid-template-columns: repeat(3,auto);
+}
+.gallery figure {
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.gallery figcaption {
+	position: absolute;
+  bottom: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+  opacity: 0;
+	color: white;
+	background: rgba(0, 0, 0, 0.5);	
+  font-size:90%;
+  font-weight:bold;
+}
+
+.gallery figure:hover figcaption,
+.gallery figure:focus figcaption {
+  opacity: 1;
+}
+
+.gallery > figure img {
+  width: 0;
+  height: 0;
+  min-height: 100%;
+  min-width: 100%;
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+  transition: .35s linear;
+}
+
+.gallery figure:hover img,
+.gallery figure:focus img{
+  filter: grayscale(0);
+  width:  calc(var(--size)*var(--zoom));
+  height: calc(var(--size)*var(--zoom));
+}
+
+
+
+/*  ---------------------------   */
+/*  Ausrichtung von Objekten      */
+/*  ---------------------------   */
+
+.left {
+ float:left;
+}
+
+.right {
+ float:right;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* Kontakt-Formular                                                                         */
+/* ---------------------------------------------------------------------------------------- */
+
+/* Als Standard wird alles zentriert, sieht besser aus */
+#contact-formular {
+        text-align:center;
+}
+/* Definition der Felder des Kontaktformular */
+#contact-formular input[type="text"], #contact-formular textarea, #contact-formular input[type="email"] {
+        color: #999999;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        width:100%;
+        height:20px;
+        background:#f5f5f5;
+        border-radius:3px;
+        margin-bottom:20px;
+        border:0;
+        box-shadow: 0 0px 3px rgba(0, 0, 0, 0.22) inset;
+        transition: all 0.2s linear;
+ }
+
+#contact-formular input[type="checkbox"] {
+        margin-bottom:10px;
+        vertical-align:middle;
+}
+
+#contact-formular textarea  {
+        height: 250px;
+        vertical-align:top;
+}
+
+#contact-formular input[type=text]:focus, #contact-formular input[type="textarea"]:focus, #contact-formular input[type=email]:focus {
+        background-color: #e1e1e1;
+}
+
+/* Button im Kontaktformular formatieren */
+#contact-formular input[type="submit"] {
+        color:#22222;
+        background-color:grey;
+        text-transform:uppercase;
+        padding:10px 15px;
+        letter-spacing:0;
+        line-height:14px;
+        cursor:pointer;
+        border-radius:3px;
+        transition:all 0.3s ease 0s;
+        text-align:center;
+}
+/*  Definition der Tabelle für das Formular */
+.form-table {
+padding-right: 10px; 
+margin-left: auto; 
+margin-right: auto; 
+border="0";
+cellspacing="1";
+cellpadding="2";
+width:50%;
+background-color:rgba(0,0,0,0);
+}
+
+.form-table td {
+  background-color: none;
+  border: 0;
+}
+
+/* Definition der Labels im Formular */
+.form-label {
+        vertical-align:top;
+        padding-right:10px;
+        width:95%;
+        font-weight:bold;
+}
+
+.form-field {
+        vertical-align:top;
+        width:95%;
+}
+
+.form-label-kontakt {
+        vertical-align:top;
+        padding-right:10px;
+        width:50%;
+        font-weight:bold;
+}
+
+.form-field-kontakt {
+        vertical-align:top;
+        text-align:left;
+        width:50%;
+}
+
+.form-submit {
+padding-top:25px;
+text-align:center;
+}
+/* Definition der Select-Auswahlfelder, nur notwendig, wenn Auswahlfelder erstellt werden sollen*/
+.form-select {
+        display: inline-block;
+        overflow: hidden;
+        vertical-align:top;
+        width:100%;
+        box-shadow: 0 0px 3px rgba(0, 0, 0, 0.22) inset;
+        transition: all 0.2s linear;
+        background:#f5f5f5;
+        margin-bottom:20px;
+}
+/* ----------------------------------*/
+/* Der Blog                          */
+/* --------------------------------  */
+
+#blog {
+  top:200px;                 ! Außenabstand zum Kopfbereich;
+  padding-left:10px;        ! Innenabstand zum Menü;
+  padding-right:10px;       ! Innenabstand zum Newsbereich;
+  padding-top:10px;          ! Innenabstand nach oben;
+  padding-bottom:10px;       ! Innenabstand nach unten;
+}
+
+.post {
+  font-size:130%;
+  background-color: yellow;
+  display: inline-block;
+  width: 95%;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
+  border-radius: 3px;
+}
+
+.code-badge {
+  border-radius: 0px !important;
+  padding: 0px !important;
+  background: yellow !important;
+  color: white !important;
+  font-size: 15px !important;
+  padding-left: 10px !important;
+  text-transform: uppercase;
+  padding-top: 3px !important;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* Responsive Media Querries - Text- und Absatzformatierung bei unterschiedlichen Bildschirmgrößen, es werden nur die Werte angepasst, die auch geändert werden   */
+/* -------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* -----kleiner Full-HD----------------------------------------------------------------------------------- */
+ @media only screen and (max-width: 1000px) {
+/*  Anpassung der Font-Size für die gesamte Website */  
+html, body {
+   font-size:12pt;
+}
+   
+/*  Anpassung Der Teaser-Anzeige */  
+.teaser_03 {
+   display:none;        ! Teaser 3 wird auf kleineren Bildschirmen versteckt;
+  }
+.teaser {
+ 	padding: 2px 2px;				! Innenabstand für den Teaser;
+	margin: 0 1px 2px 1px;			! Außenabstand nach unten zum nächsten Teaser;
+}
+.teaser_date {
+	font-size:90%;                           		 ! etwas kleiner als die Standardschrift;
+}
+.teaser_title {
+	font-size:105%;                           		! etwas größer als die Standardschrift;
+	line-height:105%;
+}
+.teaser_text {
+        line-height: 110%;                          		 ! Anpassung der Zeilenhöhe;
+}
+a.teaser_link {
+   padding-top: 2px;
+}
+}
+
+/* -----Tabletes----------------------------------------------------------------------------------- */
+ @media only screen and (max-width: 767px) {
+
+/* Bestimmung von unterschiedlichen Schriftgrößen in Abhängigkeit von der Bildschirmgröße. */
+html, body {
+        font-size:12px;
+         background-image:url("https://cdn.glitch.global/523063a9-9bd1-4d03-9a3b-526abc4c3541/aachen_dom_hochformat.jpg?v=1648660220213");
+         background-repeat:repeat-y; 
+}
+/* Anpassung der Höhe des Kopfbereichs */
+#kopfbereich {
+  height:80px;              ! Höhe des Kopfbereichs;
+}
+/* Anpassung Navibereichs */
+#navibereich {
+  top: 80px;                 ! Position unterhalb des Kopfbereiches;
+  width:150px;               ! Breite des Navibereichs;
+  min-height:150px;          ! Minimal-Höhe des Navibereichs; 
+}
+/* Anpassung Textbereichs */
+#textbereich {
+  top:80px;                  ! Außenabstand zum Kopfbereich;
+  padding-left:160px;        ! Innenabstand zum Menü;
+  padding-right:160px;       ! Innenabstand zum Newsbereich;
+  padding-top:10px;          ! Innenabstand nach oben;
+  padding-bottom:50px;       ! Innenabstand nach unten;
+}
+/* Anpassung Newsbereichs */
+#newsbereich {
+  top: 80px;                ! Position unterhalb des Kopfbereiches;
+  width:150px;               ! Breite des Newsbereichs;
+  min-height:150px;          ! Minimal-Höhe des Newsbereichs;
+ }
+/* Anpassung Fussbereichs */
+#fussbereich {
+ height:40px;                 ! Höhe des Fußbereichs;
+ padding:5px;                ! Innenabstand einheitlich bei 5px;
+} 
+/*Logogröße anpassen */
+ .header-image {
+  width:110px;
+}
+/*Headertitle Schriftgröße anpassen */
+.header-title {
+font-size:150%;
+}
+/* Anpassung der Schriftgröße sowie der Zeilenhöhe des Menüs */
+#navibereich .nav > li > a {
+	font-size:120%;      	! Festlegung des Schriftgröße;
+	line-height: 15px;		! Höhe der Zeile wird festgelegt;
+}
+/*  Anpassung der Tabelle des Kontaktformulars */
+.form-table {
+width:90%;
+}
+/*  Anpassung Der Teaser-Anzeige */  
+.teaser_02 {
+   display:none;        ! Teaser 2 wird auf dem Smartphone versteckt;
+  }
+}
+
+/* ---------Smartphones------------------------------------------------------------------------------- */
+ @media only screen and (max-width: 479px) {
+
+/* Bestimmung von unterschiedlichen Schriftgrößen in Abhängigkeit von der Bildschirmgröße. */
+html, body {
+        font-size:12px;
+}
+/* Anpassung der Bereiche für sehr kleine Monitore */
+#kopfbereich {
+  height:70px;              ! Höhe des Kopfbereichs;
+}
+/* Anpassung Navibereichs: Aus dem Navibereich wird ein Klickbotton */
+#navibereich {
+ top: 5px;                
+ left:88%;
+ width: 35px;
+ margin: 2px 2px 2px 2px;
+ height: 35px;
+ min-height: 35px;
+ padding: 2px;
+ background:url("https://cdn.glitch.global/0875808f-d998-41f1-99b4-1ad690cbded0/responsive-menu1.png?v=1648299810546") no-repeat 2px 2px; 
+ background-size:30px 30px; 
+ background-color:grey;
+ cursor:pointer;
+ border-radius:3px;
+ opacity:0.9; ! leichte Transparenz wird eingestellt;
+ text-align:right;
+ touch-action: manipulation; ! Stellt sicher, dass keine Action ausgeführt wird, wenn das Menü angeklickt wird. IMPORTANT;
+ }
+/* Anpassung Navibereichs: Die Menüpunkte werden optisch angepasst und versteckt */
+#navibereich .nav {
+	 background-color:white;
+   width: 120px;
+   text-align:left;
+   display:none; ! Das Menü selbst wird versteckt. Nur beim Klick auf den Button wird das Menü angezeigt;
+   left:60%;
+   float:right;
+ }
+
+#navibereich .nav > li > a {
+	font-size:110%;           ! Festlegung des Schriftgröße;
+	line-height: 15px;		    ! Höhe der Zeile wird festgelegt;
+	padding:2px;		          ! Innenabstand einheitlich definiert;
+}   
+   
+#navibereich:hover .nav {
+     opacity:1;           ! Transparenz wird ausgeschaltet;
+     display:block;       ! Bei Hover wird das Menü angezeigt;
+ }
+
+   
+   #navibereich:active .nav {
+     opacity:1;           ! Transparenz wird ausgeschaltet;
+     display:block;       ! Bei active wird das Menü angezeigt;
+}
+/* Anpassung Textbereich: Der Textbereich erstreckt sich nun über die ganze Breite. */   
+#textbereich {
+
+  top:70px;                 ! Außenabstand zum Kopfbereich;
+  padding-left:10px;        ! Innenabstand zum Menü;
+  padding-right:10px;       ! Innenabstand zum Newsbereich;
+  padding-top:10px;          ! Innenabstand nach oben;
+  padding-bottom:40px;       ! Innenabstand nach unten;
+}
+/* Anpassung Newsbereich: Dieser wird versteckt */
+#newsbereich {
+   visibility:hidden;        ! Newsbereich wird auf dem Smartphone versteckt;
+  }
+/* Anpassung Fußbereich */
+#fussbereich {
+ height:40px;                 ! Höhe des Fußbereichs;
+ padding:5px;                ! Innenabstand einheitlich bei 5px;
+} 
+/*Logogröße anpassen */
+ .header-image {
+  width:80px;
+}
+/*Headertitle Schriftgröße anpassen */
+.header-title {
+font-size:130%;
+padding-right:40px;  
+}
+/*  Anpassung der Tabelle des Kontaktformulars */
+.form-table {
+width:98%;
+}
+}

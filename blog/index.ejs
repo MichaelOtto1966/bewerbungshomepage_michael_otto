@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN">
+<html>
+  <head>
+    <title>Bewerbungshomepage</title>
+    <div id="meta"></div>
+    <div id="fonts"></div>
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+    <!-- Einbindung der Javascript-Bibliothek JQUERY von GOOGLE -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <!-- Einbindung der Stylesheet-Bibliothek BOOTSTRAP für die automatisierte Menüsteuerung -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+     <!-- Einbindung der Stylesheet-Bibliotheken für den Blog 
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.2/styles/night-owl.min.css"> -->
+      <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+     <!-- import the webpage's markdown-style -->
+    <link rel="stylesheet" href="/markdown-style.css" />
+  </head>
+
+  <body onload="setTimeout(function() {setActiveMenu('#main_menu_item_blog');}, 1000);">
+    <div id="kopfbereich"></div>
+    <!-- Ende kopfbereich -->
+
+    <div id="navibereich"></div>
+    <!-- Ende navibereich -->
+    
+    <div id="textbereich">
+    <p><a id="main_menu_item_blog" href="/blog">ZURÜCK ZUM BLOG</a></p>   
+    <div class="markdown-body" id="blog">
+      <div class="title">
+          <%- date %> - <%- title %>
+      </div>
+      <p><%- description %></p>
+      <hr>
+      <%- post %>
+    </div>
+    
+    <br /><br /><br /><br /><br />
+    </div><!-- Ende textbereich -->
+
+      <div id="fussbereich"></div>
+    <!-- Ende fussbereich -->
+
+    <div id="newsbereich"></div>
+    <!-- Ende newsbereich -->
+    <script>
+      $(window).on("load", function () {
+        load_content("navibereich", "content-navi.html");
+        load_content("newsbereich", "content-news.html");
+        load_content("fussbereich", "content-footer.html");
+        load_content("kopfbereich", "content-header.html");
+        load_content("meta", "content-meta.html");
+        load_content("fonts", "content-fonts.html");
+      });
+    </script>
+  </body>
+</html>

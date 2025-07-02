@@ -1,0 +1,84 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN">
+<html>
+<head>
+<title>Bildergalerie</title>
+<div id="meta"></div>
+<div id="fonts"></div>
+
+<!-- import the webpage's javascript file -->
+<script src="/script.js" defer></script>  
+   <!-- Einbindung der Javascript-Bibliothek JQUERY von GOOGLE -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <!-- Einbindung der Stylesheet-Bibliothek BOOTSTRAP für die automatisierte Menüsteuerung -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!-- import the webpage's stylesheet -->
+<link rel="stylesheet" href="/style.css" />
+</head>
+ 
+<body onload="setTimeout(function() {setActiveMenu('#main_menu_item_bildergalerie');}, 1000);">
+  
+		<div id="kopfbereich"><!-- Beginn kopfbereich -->
+    
+  </div> <!-- Ende kopfbereich -->
+
+		<div id="navibereich">
+                 
+		</div> <!-- Ende navibereich -->
+    
+		<div id="textbereich">
+       <p class="title">Bildergalerie</p>
+           <ul class="galerie" id="galerie">
+            <li class="galerie">
+             <button class="galerie" tabindex="1"><img class="galerie" src="https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2Fkuh4.jpg?v=1614683227388"  alt="Kuh">
+             </button>
+            </li>
+            <li class="galerie">
+             <button class="galerie" tabindex="2"><img class="galerie" src="https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2Floewe.png?v=1614854889374"  alt="Löwe">
+             </button>
+            </li>       
+        </ul>
+       <br><br>
+      <p class="title">Grundlagen der Linkfreigabe</p>
+      <video src="https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2FGrundlagen_der_Erteilung_einer_Linkfreigabe.mp4?v=1622528847327" controls>
+        Ihr Browser kann dieses Video nicht wiedergeben. Sie können ihn unter 
+        <a href="https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2FGrundlagen_der_Erteilung_einer_Linkfreigabe.mp4?v=1622528847327">Grundlagen der Linkfreigabe</a> abrufen.
+      </video>
+      <br><br>
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/DmnMTsH4fyY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/_d7lBUJBIVo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <br><br> <br><br> <br><br>
+     <section class="gallery">
+	<figure tabindex="1">
+		<img src="https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2Fkuh4.jpg?v=1614683227388" alt="Kuh">
+		<figcaption>Das Bild der Kuh</figcaption>
+	</figure>
+	<figure tabindex="1">
+		<img src="https://cdn.glitch.com/3c6dab22-6538-4353-88a5-4b27b47151ef%2Floewe.png?v=1614854889374" alt=" Löwe">
+		<figcaption>Das Bild vom Löwen</figcaption>
+	</figure>
+</section><br><br><br><br><br><br><br><br>
+    
+      
+  </div> <!-- Ende textbereich -->
+
+		<div id="fussbereich">
+         
+		</div> <!-- Ende fussbereich -->
+  
+  <div id="newsbereich">
+       
+	</div>  <!-- Ende newsbereich --> 
+   <script>
+    $( window ).on( "load", function() { 
+       load_content('navibereich', 'content-navi.html');
+       load_content('newsbereich', 'content-news.html');
+       load_content('fussbereich', 'content-footer.html');
+       load_content('kopfbereich', 'content-header.html');
+       load_content('meta', 'content-meta.html');
+       load_content('fonts', 'content-fonts.html');
+    });
+  </script>
+  
+  </body>
+
+</html>
