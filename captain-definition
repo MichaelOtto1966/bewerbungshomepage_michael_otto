@@ -1,6 +1,10 @@
 {
   "schemaVersion": 2,
-  "templateId": "node-js-22",
-  "templateOverride": {},
+ "templateId": "node/22",
+  "templateOverride": {
+    "prepareCommands": [
+      "apk add --no-cache python3 make g++"
+    ]
+  },
   "variables": []
 }
