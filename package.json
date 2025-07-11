@@ -3,7 +3,7 @@
   "//2": "https://docs.npmjs.com/files/package.json",
   "//3": "updating this file will download and update your packages",
   "name": "bewerbungshomepage-node-js",
-  "version": "0.0.1",
+  "version": "0.0.9",
   "description": "Node app for a Application-Website.",
   "main": "server.js",
   "scripts": {
@@ -26,15 +26,15 @@
     "zero-md": "^3.1.7"
   },
   "engines": {
-    "node": "12.x"
+    "node": "18.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/bewerbungshomepage-with-blog"
+    "url": "https://fluffy-space-spork-q4gwrgjqpvwcp7v.github.dev/"
   },
   "license": "MIT",
   "keywords": [
     "node",
-    "glitch",
+    "github",
     "nodemailer",
     "express"
   ]

@@ -43,6 +43,7 @@ app.all("*", checkHttps);
 app.use(express.static("public"));
 app.use(express.static("content"));
 app.use(express.static("content/cms"));
+app.use(express.static("assets"));
 
 // This is the basic-routing
 app.get("/", (request, response) => {
